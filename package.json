@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "protractor": "*"
+  },
+  "scripts": {},
+  "devDependencies": {
+    "protractor": "*"
+  }
+}
