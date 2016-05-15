@@ -2,12 +2,13 @@
 Everything to run a protractor test in chrome or firefox - inside of docker containers
 
 ##Setup
-Install Git and Docker Toolbox if needed
-git clone https://github.com/mcherryleigh/protractor-selenium-docker.git
-npm install
-docker-compose up -d
+1. Install Git and Docker Toolbox if needed
+1. git clone https://github.com/mcherryleigh/protractor-selenium-docker.git
+1. npm install
+1. docker-compose up -d
 
 At this point selenium hub and one of each browser container will launch. When all selenium/browser containers have finished the nodejs container will run and run the test script in the command property
+
 If you only want to use debug or if you want to run a lot of containers on the grid see the help script below.
 
 ##Running Tests
