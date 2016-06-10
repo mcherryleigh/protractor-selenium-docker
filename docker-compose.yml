@@ -4,16 +4,12 @@ services:
     image: selenium/hub:2.53.0
     ports:
       - "4444:4444"
-    networks:
-      - testing
     environment:
       GRID_TIMEOUT: 10000
 
   chrome-debug:
     container_name: "chrome-debug"
     image: selenium/node-chrome-debug:2.53.0
-    networks:
-      - testing
     #one of the OpenDNS IPs
     dns: 208.67.222.222
     ports:
@@ -26,8 +22,6 @@ services:
 
   chrome-swarm:
     image: selenium/node-chrome:2.53.0
-    networks:
-      - testing
     dns: 208.67.222.222
     environment:
       HUB_PORT_4444_TCP_ADDR: "selenium-hub"
@@ -38,8 +32,6 @@ services:
   firefox-debug:
     container_name: "firefox-debug"
     image: selenium/node-firefox-debug:2.53.0
-    networks:
-      - testing
     ports:
       - "5901:5900"
     dns: 208.67.222.222
@@ -51,8 +43,6 @@ services:
 
   firefox-swarm:
     image: selenium/node-firefox:2.53.0
-    networks:
-      - testing
     dns: 208.67.222.222
     extra_hosts:
       - "mage19.docker:192.168.99.100"
@@ -67,17 +57,10 @@ services:
     image: node:4
     ports:
       - "9001:9000"
-    networks:
-      - testing
     volumes:
       - ./:/tests
     working_dir: /tests
     depends_on:
       - selenium-hub
       - chrome-debug
-      - firefox-debug
     command: "node /tests/node_modules/protractor/bin/protractor /tests/conf.js"
-
-networks:
-  testing:
-    driver: bridge
