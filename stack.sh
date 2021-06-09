@@ -8,7 +8,7 @@ then
     ./stack swarmup [chrome|firefox] [amount] -- Launch the swarm browser stack. 1 Hub + X Chrome OR Firefox. VNC is not available
     ./stack swarmdown [chrome|firefox] -- Stops the swarm browser containers and removes them but leaves the hub alone"
     ./stack alldown [chrome|firefox] -- Stops all containers related to this project"
-    ./stack swarmdown [chrome|firefox] -- Runs the nodejs container that runs the tests"
+    ./stack exlocal [chrome|firefox] -- Runs the nodejs container that runs the tests"
 fi
 
 case $1 in
