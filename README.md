@@ -21,7 +21,7 @@ If you do a "docker-compose up" the tests run by default out of the box. If you 
     ./stack swarmup [chrome|firefox] [amount] -- Launch the swarm browser stack. 1 Hub + X Chrome OR Firefox. VNC is not available
     ./stack swarmdown [chrome|firefox] -- Stops the swarm browser containers and removes them but leaves the hub alone"
     ./stack alldown [chrome|firefox] -- Stops all containers related to this project"
-    ./stack swarmdown [chrome|firefox] -- Runs the nodejs container that runs the tests"
+    ./stack exlocal [chrome|firefox] -- Runs the nodejs container that runs the tests"
     
 ## TravisCI
 The .travis.yml file defines a build that runs only the hub and a single chrome container and then starts up the nodejs container to run tests. Run results are visible from the project's [build history on travis-ci.org](https://travis-ci.org/mcherryleigh/protractor-selenium-docker/builds).
